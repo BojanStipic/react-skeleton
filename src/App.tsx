@@ -1,3 +1,5 @@
+import { Heading } from "@chakra-ui/react";
+
 export const App = () => {
-  return <div>React Skeleton</div>;
+  return <Heading>React Skeleton</Heading>;
 };
