@@ -26,5 +26,7 @@
     "plugin:jsx-a11y/recommended",
     "prettier"
   ],
-  "rules": {}
+  "rules": {
+    "@typescript-eslint/consistent-type-definitions": ["warn", "type"]
+  }
 }
