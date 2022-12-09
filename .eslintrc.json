@@ -27,6 +27,7 @@
     "prettier"
   ],
   "rules": {
-    "@typescript-eslint/consistent-type-definitions": ["warn", "type"]
+    "@typescript-eslint/consistent-type-definitions": ["warn", "type"],
+    "@typescript-eslint/array-type": ["warn", { "default": "generic" }]
   }
 }
