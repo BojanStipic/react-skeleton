@@ -11,7 +11,7 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
     "fmt": "prettier --write .",
-    "lint": "eslint --max-warnings 0 --fix .",
+    "lint": "tsc --noEmit && eslint --max-warnings 0 --fix .",
     "prepare": "husky install"
   },
   "dependencies": {

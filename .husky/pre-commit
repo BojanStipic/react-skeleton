@@ -1,4 +1,7 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+echo "Running tsc..."
+npx tsc --noEmit
+
 npx lint-staged
