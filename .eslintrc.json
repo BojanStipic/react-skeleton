@@ -29,5 +29,13 @@
   "rules": {
     "@typescript-eslint/consistent-type-definitions": ["warn", "type"],
     "@typescript-eslint/array-type": ["warn", { "default": "generic" }]
-  }
+  },
+
+  "overrides": [
+    {
+      "files": ["*.test.*"],
+      "plugins": ["testing-library", "jest-dom"],
+      "extends": ["plugin:testing-library/react", "plugin:jest-dom/recommended"]
+    }
+  ]
 }
