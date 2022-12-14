@@ -1,9 +1,29 @@
 import { ReactElement, ReactNode } from "react";
 import { render, RenderOptions } from "@testing-library/react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ChakraProvider } from "@chakra-ui/react";
+import { MemoryRouter } from "react-router-dom";
 
 import { theme } from "../theme";
-import { MemoryRouter } from "react-router-dom";
+
+export const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+    },
+  },
+  logger: {
+    log: () => {
+      /* do nothing */
+    },
+    warn: () => {
+      /* do nothing */
+    },
+    error: () => {
+      /* do nothing */
+    },
+  },
+});
 
 type WrapperProps = {
   children: ReactNode;
@@ -11,9 +31,11 @@ type WrapperProps = {
 
 const Wrapper = ({ children }: WrapperProps) => {
   return (
-    <ChakraProvider theme={theme}>
-      <MemoryRouter>{children}</MemoryRouter>
-    </ChakraProvider>
+    <QueryClientProvider client={queryClient}>
+      <ChakraProvider theme={theme}>
+        <MemoryRouter>{children}</MemoryRouter>
+      </ChakraProvider>
+    </QueryClientProvider>
   );
 };
 
