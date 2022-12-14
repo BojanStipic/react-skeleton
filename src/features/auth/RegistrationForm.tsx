@@ -4,16 +4,11 @@ import { FaEnvelope, FaLock } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
 import { Form, Input } from "../../components";
-
-type RegisterReq = {
-  email: string;
-  name: string;
-  lastName: string;
-  password: string;
-};
+import { RegisterReq, useRegisterMut } from ".";
 
 const useValidations = () => {
   const { t } = useTranslation();
+
   return {
     email: {
       required: { value: true, message: t("Email address is required.") },
@@ -56,9 +51,10 @@ export const RegistrationForm = () => {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<RegisterReq>();
+  const { mutate: userRegister } = useRegisterMut();
 
   const onSubmit: SubmitHandler<RegisterReq> = (registerReq) => {
-    console.log(registerReq);
+    userRegister(registerReq);
   };
 
   return (

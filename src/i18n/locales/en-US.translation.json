@@ -22,5 +22,14 @@
   "Password must be at least 8 characters long.": "Password must be at least 8 characters long.",
   "Password must contain letters and numbers.": "Password must contain letters and numbers.",
   "Please enter a valid name.": "Please enter a valid name.",
-  "Please enter a valid last name.": "Please enter a valid last name."
+  "Please enter a valid last name.": "Please enter a valid last name.",
+  "There was an error": "There was an error",
+  "Something went wrong. Please try again.": "Something went wrong. Please try again.",
+  "Log In / Register": "Log In / Register",
+  "Log Out": "Log Out",
+  "Registered successfully": "Registered successfully",
+  "You have successfully registered a new account": "You have successfully registered a new account",
+  "Sorry": "Sorry",
+  "we couldn’t find what you were looking for.": "we couldn’t find what you were looking for.",
+  "Go home": "Go home"
 }

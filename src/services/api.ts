@@ -4,5 +4,3 @@ import { API_BASE_URL } from "../env";
 export const api = axios.create({
   baseURL: API_BASE_URL,
 });
-
-export type ApiError = unknown;

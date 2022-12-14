@@ -6,17 +6,36 @@ import {
   Heading,
   IconButton,
   useColorMode,
+  Button,
 } from "@chakra-ui/react";
-import { FaBars, FaTimes, FaSun, FaMoon, FaLink } from "react-icons/fa";
+import {
+  FaBars,
+  FaTimes,
+  FaSun,
+  FaMoon,
+  FaLink,
+  FaSignInAlt,
+  FaUserCircle,
+  FaSignOutAlt,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { NavButton } from ".";
+import { useAuthenticatedUser } from "../features/auth/useAuthenticatedUser";
+import { useLogoutMut } from "../features/auth/useLogoutMut";
 
 export const Header = () => {
   const { t } = useTranslation();
   const [showMenu, setShowMenu] = useState(false);
   const { colorMode, toggleColorMode } = useColorMode();
+
+  const {
+    data: user,
+    isLoading: isUserLoading,
+    isError: isUserError,
+  } = useAuthenticatedUser();
+  const { mutate: logout } = useLogoutMut();
 
   return (
     <Card as="header" p={4}>
@@ -32,7 +51,7 @@ export const Header = () => {
         </Heading>
 
         <IconButton
-          display={{ base: "flex", md: "none" }}
+          display={{ base: "flex", xl: "none" }}
           aria-label={t("Toggle main menu")}
           icon={showMenu ? <FaTimes /> : <FaBars />}
           fontSize="2xl"
@@ -42,11 +61,11 @@ export const Header = () => {
 
         <Stack
           as="nav"
-          display={{ base: showMenu ? "flex" : "none", md: "flex" }}
-          direction={{ base: "column", md: "row" }}
-          w={{ base: "full", md: "auto" }}
+          display={{ base: showMenu ? "flex" : "none", xl: "flex" }}
+          direction={{ base: "column", xl: "row" }}
+          w={{ base: "full", xl: "auto" }}
           align="center"
-          mt={{ base: 4, md: 0 }}
+          mt={{ base: 4, xl: 0 }}
           spacing={4}
         >
           <NavButton to="/link-a" icon={FaLink}>
@@ -58,6 +77,26 @@ export const Header = () => {
           <NavButton to="/link-c" icon={FaLink}>
             {t("Link C")}
           </NavButton>
+
+          {!isUserLoading && !isUserError && user ? (
+            <>
+              <NavButton to="/profile" icon={FaUserCircle}>
+                {user.email}
+              </NavButton>
+              <Button
+                colorScheme="gray"
+                leftIcon={<FaSignOutAlt />}
+                onClick={() => logout()}
+              >
+                {t("Log Out")}
+              </Button>
+            </>
+          ) : (
+            <NavButton to="/auth" icon={FaSignInAlt}>
+              {t("Log In / Register")}
+            </NavButton>
+          )}
+
           <IconButton
             aria-label={t("Toggle dark mode")}
             icon={colorMode === "dark" ? <FaMoon /> : <FaSun />}
