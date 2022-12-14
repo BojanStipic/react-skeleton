@@ -1,4 +1,4 @@
-import { Container, VStack, Heading, Text, Link } from "@chakra-ui/react";
+import { Container, Heading, Link, Text, VStack } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { Link as RouterLink } from "react-router-dom";
 

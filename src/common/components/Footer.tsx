@@ -1,4 +1,4 @@
-import { Text, Link, Card, useColorModeValue } from "@chakra-ui/react";
+import { Card, Link, Text, useColorModeValue } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 
 export const Footer = () => {

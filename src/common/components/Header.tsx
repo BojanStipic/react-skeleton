@@ -1,25 +1,25 @@
-import { useState } from "react";
 import {
-  Flex,
-  Stack,
+  Button,
   Card,
+  Flex,
   Heading,
   IconButton,
+  Stack,
   useColorMode,
-  Button,
 } from "@chakra-ui/react";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   FaBars,
-  FaTimes,
-  FaSun,
-  FaMoon,
   FaLink,
+  FaMoon,
   FaSignInAlt,
-  FaUserCircle,
   FaSignOutAlt,
+  FaSun,
+  FaTimes,
+  FaUserCircle,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 
 import { NavButton } from ".";
 import { useAuthenticatedUser, useLogoutMut } from "../../auth";

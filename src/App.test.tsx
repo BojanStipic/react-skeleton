@@ -1,7 +1,7 @@
-import { test, expect } from "vitest";
-import { render, screen } from "./tests/test-utils";
+import { expect, test } from "vitest";
 
 import { App } from "./App";
+import { render, screen } from "./tests/test-utils";
 
 test("renders app", () => {
   render(<App />);

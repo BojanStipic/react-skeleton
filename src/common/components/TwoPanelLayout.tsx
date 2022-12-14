@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
 import { Container, Stack } from "@chakra-ui/react";
+import { ReactNode } from "react";
 
 export type TwoPanelLayoutProps = {
   left: ReactNode;

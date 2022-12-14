@@ -1,5 +1,5 @@
+import { Button, ButtonProps, Icon } from "@chakra-ui/react";
 import { ElementType, ReactNode } from "react";
-import { Icon, Button, ButtonProps } from "@chakra-ui/react";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 
 export type NavButtonProps = ButtonProps & {

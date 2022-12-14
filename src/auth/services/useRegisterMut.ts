@@ -1,10 +1,10 @@
-import { AxiosError } from "axios";
 import { useToast } from "@chakra-ui/react";
-import { useMutation, UseMutationResult } from "@tanstack/react-query";
+import { UseMutationResult, useMutation } from "@tanstack/react-query";
+import { AxiosError } from "axios";
 import { useTranslation } from "react-i18next";
 
-import { api, ProblemDetail } from "../../common";
 import { RegisterReq, User } from "..";
+import { ProblemDetail, api } from "../../common";
 
 export const useRegisterMut = (): UseMutationResult<
   User,

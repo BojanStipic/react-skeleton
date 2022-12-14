@@ -1,10 +1,10 @@
-import { Stack, Button, Icon } from "@chakra-ui/react";
+import { Button, Icon, Stack } from "@chakra-ui/react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { FaEnvelope, FaLock } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import { FaEnvelope, FaLock } from "react-icons/fa";
 
-import { Form, Input } from "../../common";
 import { RegisterReq, useRegisterMut } from "..";
+import { Form, Input } from "../../common";
 
 const useValidations = () => {
   const { t } = useTranslation();

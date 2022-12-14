@@ -1,4 +1,5 @@
 import "i18next";
+
 import { resources } from "..";
 
 declare module "i18next" {

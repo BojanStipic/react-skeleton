@@ -1,13 +1,13 @@
 import {
-  Container,
-  Stack,
   Card,
+  Container,
   Icon,
-  Tabs,
-  TabList,
+  Stack,
   Tab,
-  TabPanels,
+  TabList,
   TabPanel,
+  TabPanels,
+  Tabs,
 } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { FaShieldAlt } from "react-icons/fa";
