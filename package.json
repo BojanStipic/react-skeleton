@@ -21,6 +21,7 @@
     "@fontsource/alfa-slab-one": "^4.5.9",
     "@fontsource/fira-sans": "^4.5.10",
     "@fontsource/source-code-pro": "^4.5.12",
+    "axios": "^1.2.1",
     "framer-motion": "^7.6.19",
     "i18next": "^22.1.5",
     "i18next-browser-languagedetector": "^7.0.1",
