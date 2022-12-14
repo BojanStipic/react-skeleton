@@ -6,7 +6,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
 
 import { App } from "./App";
-import { queryClient } from "./services/queryClient";
+import { queryClient } from "./common";
 import { theme } from "./theme";
 import "./i18n";
 

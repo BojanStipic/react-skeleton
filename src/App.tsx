@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
-import { GlobalLayout, NotFoundPage, UnderConstruction } from "./components";
-import { AuthPage, RequireAuth } from "./features/auth";
+import { GlobalLayout, NotFoundPage, UnderConstruction } from "./common";
+import { AuthPage, RequireAuth } from "./auth";
 
 export const App = () => {
   return (

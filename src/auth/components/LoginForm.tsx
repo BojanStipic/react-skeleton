@@ -3,8 +3,8 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
-import { Form, Input } from "../../components";
-import { LoginReq, useLoginMut } from ".";
+import { Form, Input } from "../../common";
+import { LoginReq, useLoginMut } from "..";
 
 const useValidations = () => {
   const { t } = useTranslation();

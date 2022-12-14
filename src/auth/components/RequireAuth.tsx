@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { Navigate } from "react-router-dom";
-import { useAuthenticatedUser } from ".";
+
+import { useAuthenticatedUser } from "..";
 
 export type RequireAuthProps = {
   children: ReactNode;

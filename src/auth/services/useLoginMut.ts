@@ -8,12 +8,13 @@ import {
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-import { api, ProblemDetail } from "../../services";
+import { api, ProblemDetail } from "../../common";
+import { LoginReq } from "..";
 
-export const useLogoutMut = (): UseMutationResult<
+export const useLoginMut = (): UseMutationResult<
   void,
   AxiosError<ProblemDetail>,
-  void
+  LoginReq
 > => {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ export const useLogoutMut = (): UseMutationResult<
   const { t } = useTranslation();
 
   return useMutation({
-    mutationFn: () => api.post("/logout"),
+    mutationFn: (loginReq) => api.post("/login", loginReq),
     onSuccess: () => {
       void queryClient.invalidateQueries();
       navigate("/");

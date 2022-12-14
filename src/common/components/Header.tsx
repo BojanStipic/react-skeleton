@@ -22,8 +22,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { NavButton } from ".";
-import { useAuthenticatedUser } from "../features/auth/useAuthenticatedUser";
-import { useLogoutMut } from "../features/auth/useLogoutMut";
+import { useAuthenticatedUser, useLogoutMut } from "../../auth";
 
 export const Header = () => {
   const { t } = useTranslation();

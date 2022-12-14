@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { Box, Stack } from "@chakra-ui/react";
 
-import { Header, Footer } from "./";
+import { Header, Footer } from ".";
 
 export type GlobalLayoutProps = {
   children: ReactNode;

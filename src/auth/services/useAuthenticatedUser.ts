@@ -1,8 +1,8 @@
 import axios, { AxiosError } from "axios";
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
 
-import { api, ProblemDetail } from "../../services";
-import { User } from ".";
+import { api, ProblemDetail } from "../../common";
+import { User } from "..";
 
 export const useAuthenticatedUser = (): UseQueryResult<
   User | null,

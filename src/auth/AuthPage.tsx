@@ -12,7 +12,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { FaShieldAlt } from "react-icons/fa";
 
-import { LoginForm, RegistrationForm } from "./";
+import { LoginForm, RegistrationForm } from ".";
 
 export const AuthPage = () => {
   const { t } = useTranslation();

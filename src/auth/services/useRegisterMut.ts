@@ -1,31 +1,29 @@
 import { AxiosError } from "axios";
 import { useToast } from "@chakra-ui/react";
-import {
-  useMutation,
-  UseMutationResult,
-  useQueryClient,
-} from "@tanstack/react-query";
+import { useMutation, UseMutationResult } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 
-import { api, ProblemDetail } from "../../services";
-import { LoginReq } from ".";
+import { api, ProblemDetail } from "../../common";
+import { RegisterReq, User } from "..";
 
-export const useLoginMut = (): UseMutationResult<
-  void,
+export const useRegisterMut = (): UseMutationResult<
+  User,
   AxiosError<ProblemDetail>,
-  LoginReq
+  RegisterReq
 > => {
-  const queryClient = useQueryClient();
-  const navigate = useNavigate();
   const toast = useToast();
   const { t } = useTranslation();
 
   return useMutation({
-    mutationFn: (loginReq) => api.post("/login", loginReq),
+    mutationFn: (registerReq) => api.post("/users", registerReq),
     onSuccess: () => {
-      void queryClient.invalidateQueries();
-      navigate("/");
+      toast({
+        title: t("Registered successfully"),
+        description: t("You have successfully registered a new account"),
+        status: "success",
+        position: "top",
+        isClosable: true,
+      });
     },
     onError: () => {
       toast({
