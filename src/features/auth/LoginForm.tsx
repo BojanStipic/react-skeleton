@@ -1,0 +1,77 @@
+import { Stack, Button, Icon } from "@chakra-ui/react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { FaEnvelope, FaLock } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+
+import { Form, Input } from "../../components";
+
+type LoginReq = {
+  email: string;
+  password: string;
+};
+
+const useValidations = () => {
+  const { t } = useTranslation();
+  return {
+    email: {
+      required: { value: true, message: t("Email address is required.") },
+      pattern: {
+        value: /.+@.+/,
+        message: t("Please enter a valid email address."),
+      },
+    },
+    password: {
+      required: { value: true, message: t("Password is required.") },
+      minLength: {
+        value: 8,
+        message: t("Password must be at least 8 characters long."),
+      },
+      pattern: {
+        value: /(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+/,
+        message: t("Password must contain letters and numbers."),
+      },
+    },
+  };
+};
+
+export const LoginForm = () => {
+  const { t } = useTranslation();
+  const validations = useValidations();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<LoginReq>();
+
+  const onSubmit: SubmitHandler<LoginReq> = (loginReq) => {
+    console.log(loginReq);
+  };
+
+  return (
+    <Stack
+      spacing="4"
+      as={Form}
+      onSubmit={(...args) => void handleSubmit(onSubmit)(...args)}
+    >
+      <Input
+        type="email"
+        label={t("Email address")}
+        isRequired
+        {...register("email", { ...validations.email })}
+        errors={errors}
+        leftElement={<Icon as={FaEnvelope} />}
+      />
+      <Input
+        type="password"
+        label={t("Password")}
+        isRequired
+        {...register("password", { ...validations.password })}
+        errors={errors}
+        leftElement={<Icon as={FaLock} />}
+      />
+      <Button type="submit" isLoading={isSubmitting}>
+        {t("Log in")}
+      </Button>
+    </Stack>
+  );
+};

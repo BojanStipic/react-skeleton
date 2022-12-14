@@ -9,5 +9,18 @@
   "Link B": "Link B",
   "Link C": "Link C",
   "Toggle main menu": "Toggle main menu",
-  "Toggle dark mode": "Toggle dark mode"
+  "Toggle dark mode": "Toggle dark mode",
+  "Log in": "Log in",
+  "Register": "Register",
+  "Email address": "Email address",
+  "Password": "Password",
+  "Name": "Name",
+  "Last name": "Last name",
+  "Email address is required.": "Email address is required.",
+  "Please enter a valid email address.": "Please enter a valid email address.",
+  "Password is required.": "Password is required.",
+  "Password must be at least 8 characters long.": "Password must be at least 8 characters long.",
+  "Password must contain letters and numbers.": "Password must contain letters and numbers.",
+  "Please enter a valid name.": "Please enter a valid name.",
+  "Please enter a valid last name.": "Please enter a valid last name."
 }
