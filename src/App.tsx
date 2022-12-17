@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 
 import { AuthPage, RequireAuth } from "./auth";
 import { GlobalLayout, NotFoundPage, UnderConstruction } from "./common";
+import { ProfilePage } from "./user";
 
 export const App = () => {
   return (
@@ -16,7 +17,7 @@ export const App = () => {
           path="/profile"
           element={
             <RequireAuth>
-              <UnderConstruction />
+              <ProfilePage />
             </RequireAuth>
           }
         />

@@ -31,5 +31,16 @@
   "You have successfully registered a new account": "You have successfully registered a new account",
   "Sorry": "Sorry",
   "we couldn’t find what you were looking for.": "we couldn’t find what you were looking for.",
-  "Go home": "Go home"
+  "Go home": "Go home",
+  "Profile": "Profile",
+  "Change Password": "Change Password",
+  "Your profile": "Your profile",
+  "Password changed successfully": "Password changed successfully",
+  "You have successfully changed your account password": "You have successfully changed your account password",
+  "Change password error": "Change password error",
+  "Something went wrong. Please try again": "Something went wrong. Please try again",
+  "Change your password": "Change your password",
+  "Old password": "Old password",
+  "New password": "New password",
+  "Change": "Change"
 }
