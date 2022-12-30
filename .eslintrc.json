@@ -1,21 +1,10 @@
 {
-  "plugins": [
-    "@typescript-eslint",
-    "react",
-    "react-hooks",
-    "jsx-a11y",
-    "@tanstack/query"
-  ],
   "settings": {
     "react": {
       "version": "detect"
     }
   },
 
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": ["tsconfig.json", "tsconfig.node.json"]
@@ -33,9 +22,29 @@
     "plugin:@tanstack/eslint-plugin-query/recommended",
     "prettier"
   ],
+
   "rules": {
-    "@typescript-eslint/consistent-type-definitions": ["warn", "type"],
-    "@typescript-eslint/array-type": ["warn", { "default": "generic" }]
+    "no-console": "error",
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "TSEnumDeclaration",
+        "message": "Don't declare enums. Use tagged unions instead."
+      },
+      {
+        "selector": "ExportDefaultDeclaration",
+        "message": "Don't use default exports. Use named exports instead."
+      }
+    ],
+    "@typescript-eslint/array-type": ["error", { "default": "generic" }],
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+    "react/boolean-prop-naming": ["error", { "propTypeNames": ["boolean"] }],
+    "react/destructuring-assignment": "error",
+    "react/forbid-component-props": "error",
+    "react/hook-use-state": "error",
+    "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }],
+    "react/jsx-pascal-case": "error",
+    "react/self-closing-comp": "error"
   },
 
   "overrides": [
