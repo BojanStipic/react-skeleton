@@ -7,11 +7,12 @@ import {
   TabPanels,
   Tabs,
 } from "@chakra-ui/react";
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { ChangePasswordForm, UserDetail } from ".";
 
-export const ProfilePage = () => {
+export const ProfilePage: FC = () => {
   const { t } = useTranslation();
 
   return (

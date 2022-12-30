@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { FC, ReactNode } from "react";
 import { Navigate } from "react-router-dom";
 
 import { useAuthenticatedUser } from "..";
@@ -7,7 +7,7 @@ export type RequireAuthProps = {
   children: ReactNode;
 };
 
-export const RequireAuth = ({ children }: RequireAuthProps) => {
+export const RequireAuth: FC<RequireAuthProps> = ({ children }) => {
   const {
     data: user,
     isLoading: isUserLoading,

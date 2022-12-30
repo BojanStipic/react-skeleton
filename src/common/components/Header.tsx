@@ -7,7 +7,7 @@ import {
   Stack,
   useColorMode,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
   FaBars,
@@ -24,7 +24,7 @@ import { Link } from "react-router-dom";
 import { NavButton } from ".";
 import { useAuthenticatedUser, useLogoutMut } from "../../auth";
 
-export const Header = () => {
+export const Header: FC = () => {
   const { t } = useTranslation();
   const [showMenu, setShowMenu] = useState(false);
   const { colorMode, toggleColorMode } = useColorMode();

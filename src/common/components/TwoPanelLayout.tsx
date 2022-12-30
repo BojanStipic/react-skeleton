@@ -1,12 +1,12 @@
 import { Container, Stack } from "@chakra-ui/react";
-import { ReactNode } from "react";
+import { FC, ReactNode } from "react";
 
 export type TwoPanelLayoutProps = {
   left: ReactNode;
   right: ReactNode;
 };
 
-export const TwoPanelLayout = ({ left, right }: TwoPanelLayoutProps) => (
+export const TwoPanelLayout: FC<TwoPanelLayoutProps> = ({ left, right }) => (
   <Container maxW="4xl">
     <Stack
       direction={{ base: "column", md: "row" }}

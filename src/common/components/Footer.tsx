@@ -1,7 +1,8 @@
 import { Card, Link, Text, useColorModeValue } from "@chakra-ui/react";
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-export const Footer = () => {
+export const Footer: FC = () => {
   const { t } = useTranslation();
   const linkColor = useColorModeValue("brand.500", "brand.300");
 

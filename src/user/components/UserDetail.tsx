@@ -6,12 +6,13 @@ import {
   SkeletonText,
   Stack,
 } from "@chakra-ui/react";
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { FaIdBadge, FaUserCircle } from "react-icons/fa";
 
 import { useAuthenticatedUser } from "../../auth";
 
-export const UserDetail = () => {
+export const UserDetail: FC = () => {
   const { t } = useTranslation();
   const { data: user, isLoading } = useAuthenticatedUser();
 

@@ -9,12 +9,13 @@ import {
   TabPanels,
   Tabs,
 } from "@chakra-ui/react";
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { FaShieldAlt } from "react-icons/fa";
 
 import { LoginForm, RegistrationForm } from ".";
 
-export const AuthPage = () => {
+export const AuthPage: FC = () => {
   const { t } = useTranslation();
 
   return (

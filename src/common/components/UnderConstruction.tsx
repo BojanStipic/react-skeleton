@@ -1,10 +1,11 @@
 import { Center, CenterProps, Heading, Icon } from "@chakra-ui/react";
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { FaHammer } from "react-icons/fa";
 
 export type UnderConstructionProps = CenterProps;
 
-export const UnderConstruction = (props: UnderConstructionProps) => {
+export const UnderConstruction: FC<UnderConstructionProps> = (props) => {
   const { t } = useTranslation();
 
   return (

@@ -1,4 +1,5 @@
 import { Box, Button, Divider, Heading, Icon, Stack } from "@chakra-ui/react";
+import { FC } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { FaLock } from "react-icons/fa";
@@ -35,7 +36,7 @@ const useValidations = () => {
   };
 };
 
-export const ChangePasswordForm = () => {
+export const ChangePasswordForm: FC = () => {
   const { t } = useTranslation();
   const validations = useValidations();
   const {
