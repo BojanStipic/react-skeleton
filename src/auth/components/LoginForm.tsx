@@ -1,14 +1,16 @@
 import { Button, Icon, Stack } from "@chakra-ui/react";
+import { useQueryClient } from "@tanstack/react-query";
 import { FC } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 
-import { LoginReq, useLoginMut } from "..";
+import { LoginReq, checkUserExists, useLoginMut } from "..";
 import { Form, Input } from "../../common";
 
 const useValidations = () => {
   const { t } = useTranslation();
+  const queryClient = useQueryClient();
 
   return {
     email: {
@@ -17,6 +19,9 @@ const useValidations = () => {
         value: /.+@.+/,
         message: t("Please enter a valid email address."),
       },
+      validate: async (email: string) =>
+        (await checkUserExists({ queryClient, email })) ||
+        t("Email address does not belong to an account."),
     },
     password: {
       required: { value: true, message: t("Password is required.") },
