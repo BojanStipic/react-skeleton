@@ -1,0 +1,104 @@
+= react-skeleton
+:toc:
+:toc-placement!:
+:sectanchors:
+:sectnums:
+ifndef::env-github[:icons: font]
+ifdef::env-github[]
+:status:
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+React skeleton to kick-start your new application.
+
+image:https://github.com/BojanStipic/react-skeleton/actions/workflows/ci.yml/badge.svg[CI, link="https://github.com/BojanStipic/react-skeleton/actions/workflows/ci.yml"]
+image:https://github.com/BojanStipic/react-skeleton/actions/workflows/codeql.yml/badge.svg[CodeQL, link="https://github.com/BojanStipic/react-skeleton/actions/workflows/codeql.yml"]
+
+toc::[]
+
+== What is included?
+
+* https://www.typescriptlang.org/[Typescript]
+* https://vitejs.dev/[Vite]
+* https://chakra-ui.com/[Chakra UI]
+* https://react-icons.github.io/react-icons/[React Icons]
+* https://react-hook-form.com/[React Hook Form]
+* https://tanstack.com/query/v4/[React Query]
+* https://axios-http.com/[Axios]
+* https://date-fns.org/[date-fns]
+* https://www.i18next.com/[i18next]
+* Custom strict https://eslint.org/[Eslint] config
+* https://prettier.io/[Prettier]
+* https://vitest.dev/[Vitest]
+* https://testing-library.com/[Testing Library]
+* Optional integration with https://github.com/BojanStipic/spring-skeleton[BojanStipic/spring-skeleton]
+
+== Usage
+
+=== Run locally
+
+```bash
+npm ci
+npm run dev
+```
+
+=== Build for deployment
+
+```bash
+npm run build
+```
+
+== Testing
+
+Run tests:
+
+```bash
+npm run test
+```
+
+Run tests and open the UI summary:
+
+```bash
+npm run test:ui
+```
+
+Check code coverage:
+
+```bash
+npm run test:coverage
+```
+
+== Code formatting
+
+```bash
+npm run fmt
+```
+
+== Eslint
+
+```bash
+npm run lint
+```
+
+== License
+
+....
+Copyright (C) 2022-2023 Bojan Stipic
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+....
