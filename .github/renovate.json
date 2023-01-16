@@ -4,9 +4,5 @@
   "labels": ["dependencies"],
   "schedule": ["after 11am on the first day of the month"],
   "prHourlyLimit": 0,
-  "rangeStrategy": "replace",
-  "lockFileMaintenance": {
-    "enabled": true,
-    "schedule": ["after 11am on the first day of the month"]
-  }
+  "rangeStrategy": "bump"
 }
