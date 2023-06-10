@@ -2,10 +2,13 @@ import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { AuthPage, RequireAuth } from "./auth";
+import { useCsrfToken } from "./auth/services/useCsrfToken";
 import { GlobalLayout, NotFoundPage, UnderConstruction } from "./common";
 import { ProfilePage } from "./user";
 
 export const App: FC = () => {
+  useCsrfToken();
+
   return (
     <GlobalLayout>
       <Routes>
