@@ -21,5 +21,5 @@ createRoot(document.getElementById("root")!).render(
         </BrowserRouter>
       </ChakraProvider>
     </QueryClientProvider>
-  </StrictMode>
+  </StrictMode>,
 );

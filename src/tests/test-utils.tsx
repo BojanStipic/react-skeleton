@@ -41,7 +41,7 @@ const Wrapper: FC<WrapperProps> = ({ children }) => {
 
 const customRender = (
   ui: ReactElement,
-  options?: Omit<RenderOptions, "wrapper">
+  options?: Omit<RenderOptions, "wrapper">,
 ): RenderResult => render(ui, { wrapper: Wrapper, ...options });
 
 export * from "@testing-library/react";

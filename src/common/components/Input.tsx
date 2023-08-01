@@ -41,7 +41,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       rightElement,
       ...rest
     },
-    ref
+    ref,
   ) => {
     return (
       <FormControl
@@ -73,7 +73,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         ) : null}
       </FormControl>
     );
-  }
+  },
 );
 
 Input.displayName = "Input";
