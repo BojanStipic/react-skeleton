@@ -73,5 +73,5 @@ export const theme = extendTheme(
       }),
     },
   },
-  withDefaultColorScheme({ colorScheme: "brand" })
+  withDefaultColorScheme({ colorScheme: "brand" }),
 );
