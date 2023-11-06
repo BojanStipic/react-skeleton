@@ -11,6 +11,6 @@ export const useCsrfToken = (): UseQueryResult<
     queryKey: ["csrf"],
     queryFn: () => api.get("/csrf"),
     staleTime: Infinity,
-    cacheTime: Infinity,
+    gcTime: Infinity,
   });
 };
