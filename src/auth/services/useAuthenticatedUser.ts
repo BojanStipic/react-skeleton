@@ -25,6 +25,6 @@ export const useAuthenticatedUser = (): UseQueryResult<
       }
     },
     staleTime: Infinity,
-    cacheTime: Infinity,
+    gcTime: Infinity,
   });
 };
