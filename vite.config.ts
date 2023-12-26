@@ -8,7 +8,6 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [react(), basicSsl()],
   server: {
-    https: true,
     proxy: {
       "/api": {
         target: "http://localhost:8080",
