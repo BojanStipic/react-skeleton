@@ -1,10 +1,10 @@
 import { expect, test } from "vitest";
 
-import { App } from "./App";
+import { GlobalLayout } from "./common";
 import { render, screen } from "./tests/test-utils";
 
-test("renders app", () => {
-  render(<App />);
+test("renders app", async () => {
+  render(<GlobalLayout />);
 
-  expect(screen.getByText("React Skeleton")).toBeInTheDocument();
+  expect(await screen.findByText("React Skeleton")).toBeInTheDocument();
 });

@@ -1,5 +1,5 @@
+import { Navigate } from "@tanstack/react-router";
 import { FC, ReactNode } from "react";
-import { Navigate } from "react-router-dom";
 
 import { useAuthenticatedUser } from "..";
 

@@ -1,6 +1,6 @@
 import { Button, ButtonProps, Icon } from "@chakra-ui/react";
+import { Link, useMatchRoute } from "@tanstack/react-router";
 import { ElementType, FC, ReactNode } from "react";
-import { Link, useMatch, useResolvedPath } from "react-router-dom";
 
 export type NavButtonProps = ButtonProps & {
   to: string;
@@ -14,7 +14,7 @@ export const NavButton: FC<NavButtonProps> = ({
   children,
   ...rest
 }) => {
-  const match = useMatch(useResolvedPath(to).pathname);
+  const match = useMatchRoute()({ to });
 
   return (
     <Button as={Link} to={to} colorScheme={match ? "brand" : "gray"} {...rest}>

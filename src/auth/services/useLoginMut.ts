@@ -4,9 +4,9 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
+import { useNavigate } from "@tanstack/react-router";
 import { AxiosError } from "axios";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 
 import { LoginReq } from "..";
 import { ProblemDetail, api } from "../../common";
@@ -25,7 +25,7 @@ export const useLoginMut = (): UseMutationResult<
     mutationFn: (loginReq) => api.post("/login", loginReq),
     onSuccess: () => {
       void queryClient.invalidateQueries();
-      navigate("/");
+      void navigate({ to: "/" });
     },
     onError: () => {
       toast({

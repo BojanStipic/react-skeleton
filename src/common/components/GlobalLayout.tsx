@@ -1,17 +1,14 @@
 import { Box, Stack } from "@chakra-ui/react";
-import { FC, ReactNode } from "react";
+import { Outlet } from "@tanstack/react-router";
+import { FC } from "react";
 
 import { Footer, Header } from ".";
 
-export type GlobalLayoutProps = {
-  children: ReactNode;
-};
-
-export const GlobalLayout: FC<GlobalLayoutProps> = ({ children }) => (
+export const GlobalLayout: FC = () => (
   <Stack minH="100vh" spacing={8}>
     <Header />
     <Box as="main" flex={1}>
-      {children}
+      <Outlet />
     </Box>
     <Footer />
   </Stack>

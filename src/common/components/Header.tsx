@@ -7,6 +7,7 @@ import {
   Stack,
   useColorMode,
 } from "@chakra-ui/react";
+import { Link } from "@tanstack/react-router";
 import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -19,7 +20,6 @@ import {
   FaTimes,
   FaUserCircle,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
 import { NavButton } from ".";
 import { useAuthenticatedUser, useLogoutMut } from "../../auth";

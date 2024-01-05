@@ -1,26 +1,21 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import {
+  RootRoute,
+  Route,
+  Router,
+  RouterProvider,
+  createMemoryHistory,
+} from "@tanstack/react-router";
 import { RenderOptions, RenderResult, render } from "@testing-library/react";
 import { FC, ReactElement, ReactNode } from "react";
-import { MemoryRouter } from "react-router-dom";
 
 import { theme } from "../theme";
 
-export const queryClient = new QueryClient({
+const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       retry: false,
-    },
-  },
-  logger: {
-    log: () => {
-      /* do nothing */
-    },
-    warn: () => {
-      /* do nothing */
-    },
-    error: () => {
-      /* do nothing */
     },
   },
 });
@@ -30,10 +25,21 @@ type WrapperProps = {
 };
 
 const Wrapper: FC<WrapperProps> = ({ children }) => {
+  const rootRoute = new RootRoute();
+  const componentRoute = new Route({
+    getParentRoute: () => rootRoute,
+    path: "/",
+    component: () => children,
+  });
+  const router = new Router({
+    routeTree: rootRoute.addChildren([componentRoute]),
+    history: createMemoryHistory(),
+  });
+
   return (
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>
-        <MemoryRouter>{children}</MemoryRouter>
+        <RouterProvider router={router} />
       </ChakraProvider>
     </QueryClientProvider>
   );

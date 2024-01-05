@@ -1,7 +1,7 @@
 import { Container, Heading, Link, Text, VStack } from "@chakra-ui/react";
+import { Link as RouterLink } from "@tanstack/react-router";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
-import { Link as RouterLink } from "react-router-dom";
 
 export const NotFoundPage: FC = () => {
   const { t } = useTranslation();
