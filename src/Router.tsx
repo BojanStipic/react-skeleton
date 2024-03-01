@@ -1,8 +1,7 @@
 import {
-  NotFoundRoute,
-  RootRoute,
-  Route,
-  Router,
+  createRootRoute,
+  createRoute,
+  createRouter,
 } from "@tanstack/react-router";
 
 import { App } from "./App";
@@ -10,47 +9,48 @@ import { AuthPage, RequireAuth } from "./auth";
 import { GlobalLayout, NotFoundPage, UnderConstruction } from "./common";
 import { ProfilePage } from "./user";
 
-export const rootRoute = new RootRoute({
+export const rootRoute = createRootRoute({
   component: App,
+  notFoundComponent: NotFoundPage,
 });
 
-export const layoutRoute = new Route({
+export const layoutRoute = createRoute({
   getParentRoute: () => rootRoute,
   id: "layout",
   component: GlobalLayout,
 });
 
-export const indexRoute = new Route({
+export const indexRoute = createRoute({
   getParentRoute: () => layoutRoute,
   path: "/",
   component: UnderConstruction,
 });
 
-export const aRoute = new Route({
+export const aRoute = createRoute({
   getParentRoute: () => layoutRoute,
   path: "link-a",
   component: UnderConstruction,
 });
 
-export const bRoute = new Route({
+export const bRoute = createRoute({
   getParentRoute: () => layoutRoute,
   path: "link-b",
   component: UnderConstruction,
 });
 
-export const cRoute = new Route({
+export const cRoute = createRoute({
   getParentRoute: () => layoutRoute,
   path: "link-c",
   component: UnderConstruction,
 });
 
-export const authRoute = new Route({
+export const authRoute = createRoute({
   getParentRoute: () => layoutRoute,
   path: "auth",
   component: AuthPage,
 });
 
-export const profileRoute = new Route({
+export const profileRoute = createRoute({
   getParentRoute: () => layoutRoute,
   path: "profile",
   component: () => (
@@ -58,11 +58,6 @@ export const profileRoute = new Route({
       <ProfilePage />
     </RequireAuth>
   ),
-});
-
-export const notFoundRoute = new NotFoundRoute({
-  getParentRoute: () => rootRoute,
-  component: NotFoundPage,
 });
 
 export const routeTree = rootRoute.addChildren([
@@ -76,7 +71,7 @@ export const routeTree = rootRoute.addChildren([
   ]),
 ]);
 
-export const router = new Router({ routeTree, notFoundRoute });
+export const router = createRouter({ routeTree });
 
 declare module "@tanstack/react-router" {
   // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
