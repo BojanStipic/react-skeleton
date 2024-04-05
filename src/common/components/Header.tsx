@@ -55,7 +55,9 @@ export const Header: FC = () => {
           icon={showMenu ? <FaTimes /> : <FaBars />}
           fontSize="2xl"
           colorScheme="gray"
-          onClick={() => setShowMenu((show) => !show)}
+          onClick={() => {
+            setShowMenu((show) => !show);
+          }}
         />
 
         <Stack
@@ -85,7 +87,9 @@ export const Header: FC = () => {
               <Button
                 colorScheme="gray"
                 leftIcon={<FaSignOutAlt />}
-                onClick={() => logout()}
+                onClick={() => {
+                  logout();
+                }}
               >
                 {t("Log Out")}
               </Button>

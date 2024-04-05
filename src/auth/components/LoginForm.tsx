@@ -1,6 +1,6 @@
 import { Button, Icon, Stack } from "@chakra-ui/react";
 import { FC } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { RegisterOptions, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 
@@ -39,7 +39,7 @@ export const LoginForm: FC = () => {
         {...register("email", {
           ...useEmailValidation(),
           ...useUserExistsValidation(),
-        })}
+        } as RegisterOptions)}
         errors={errors}
         leftElement={<Icon as={FaEnvelope} />}
       />
