@@ -16,6 +16,7 @@ jobs:
           node-version: "18"
           cache: "npm"
       - run: "npm ci"
+      - run: "tsc"
       - run: "npx eslint --max-warnings 0 ."
   format:
     runs-on: "ubuntu-latest"
