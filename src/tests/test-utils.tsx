@@ -12,19 +12,19 @@ import { FC, ReactElement, ReactNode } from "react";
 
 import { theme } from "../theme";
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: false,
-    },
-  },
-});
-
 type WrapperProps = {
   children: ReactNode;
 };
 
 const Wrapper: FC<WrapperProps> = ({ children }) => {
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: false,
+      },
+    },
+  });
+
   const rootRoute = new RootRoute();
   const componentRoute = new Route({
     getParentRoute: () => rootRoute,
