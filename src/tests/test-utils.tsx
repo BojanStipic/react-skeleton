@@ -1,11 +1,11 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
-  RootRoute,
-  Route,
-  Router,
   RouterProvider,
   createMemoryHistory,
+  createRootRoute,
+  createRoute,
+  createRouter,
 } from "@tanstack/react-router";
 import { RenderOptions, RenderResult, render } from "@testing-library/react";
 import { FC, ReactElement, ReactNode } from "react";
@@ -25,13 +25,13 @@ const Wrapper: FC<WrapperProps> = ({ children }) => {
     },
   });
 
-  const rootRoute = new RootRoute();
-  const componentRoute = new Route({
+  const rootRoute = createRootRoute();
+  const componentRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/",
     component: () => children,
   });
-  const router = new Router({
+  const router = createRouter({
     routeTree: rootRoute.addChildren([componentRoute]),
     history: createMemoryHistory(),
   });
