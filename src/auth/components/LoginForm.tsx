@@ -39,7 +39,7 @@ export const LoginForm: FC = () => {
         {...register("email", {
           ...useEmailValidation(),
           ...useUserExistsValidation(),
-        } as RegisterOptions)}
+        } as RegisterOptions<LoginReq, "email">)}
         errors={errors}
         leftElement={<Icon as={FaEnvelope} />}
       />
@@ -47,7 +47,10 @@ export const LoginForm: FC = () => {
         type="password"
         label={t("Password")}
         isRequired
-        {...register("password", usePasswordValidation())}
+        {...register(
+          "password",
+          usePasswordValidation() as RegisterOptions<LoginReq, "password">,
+        )}
         errors={errors}
         leftElement={<Icon as={FaLock} />}
       />
