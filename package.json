@@ -40,7 +40,7 @@
     "@tanstack/react-query-devtools": "^5.49.2",
     "@tanstack/router-devtools": "^1.43.4",
     "@testing-library/jest-dom": "^6.4.6",
-    "@testing-library/react": "^15.0.7",
+    "@testing-library/react": "^16.0.0",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
