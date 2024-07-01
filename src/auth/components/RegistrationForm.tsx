@@ -41,7 +41,7 @@ export const RegistrationForm: FC = () => {
         {...register("email", {
           ...useEmailValidation(),
           ...useUserUniqueValidation(),
-        } as RegisterOptions)}
+        } as RegisterOptions<RegisterReq, "email">)}
         errors={errors}
         leftElement={<Icon as={FaEnvelope} />}
       />
@@ -49,18 +49,27 @@ export const RegistrationForm: FC = () => {
         type="password"
         label={t("Password")}
         isRequired
-        {...register("password", usePasswordValidation())}
+        {...register(
+          "password",
+          usePasswordValidation() as RegisterOptions<RegisterReq, "password">,
+        )}
         errors={errors}
         leftElement={<Icon as={FaLock} />}
       />
       <Input
         label={t("Name")}
-        {...register("name", useNameValidation())}
+        {...register(
+          "name",
+          useNameValidation() as RegisterOptions<RegisterReq, "name">,
+        )}
         errors={errors}
       />
       <Input
         label={t("Last name")}
-        {...register("lastName", useLastNameValidation())}
+        {...register(
+          "lastName",
+          useLastNameValidation() as RegisterOptions<RegisterReq, "lastName">,
+        )}
         errors={errors}
       />
       <Button type="submit" isLoading={isSubmitting}>

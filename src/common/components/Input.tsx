@@ -67,7 +67,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           {rightAddon ? <InputRightAddon>{rightAddon}</InputRightAddon> : null}
         </InputGroup>
         {errors[name]?.message ? (
-          <FormErrorMessage>{errors[name]?.message as string}</FormErrorMessage>
+          <FormErrorMessage>{errors[name].message as string}</FormErrorMessage>
         ) : hint ? (
           <FormHelperText>{hint}</FormHelperText>
         ) : null}

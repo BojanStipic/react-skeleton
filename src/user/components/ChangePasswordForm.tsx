@@ -1,6 +1,6 @@
 import { Box, Button, Divider, Heading, Icon, Stack } from "@chakra-ui/react";
 import { FC } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { RegisterOptions, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { FaLock } from "react-icons/fa";
 
@@ -34,7 +34,13 @@ export const ChangePasswordForm: FC = () => {
           type="password"
           label={t("Old password")}
           isRequired
-          {...register("oldPassword", usePasswordValidation())}
+          {...register(
+            "oldPassword",
+            usePasswordValidation() as RegisterOptions<
+              ChangePasswordReq,
+              "oldPassword"
+            >,
+          )}
           errors={errors}
           leftElement={<Icon as={FaLock} />}
         />
@@ -42,7 +48,13 @@ export const ChangePasswordForm: FC = () => {
           type="password"
           label={t("New password")}
           isRequired
-          {...register("newPassword", usePasswordValidation())}
+          {...register(
+            "newPassword",
+            usePasswordValidation() as RegisterOptions<
+              ChangePasswordReq,
+              "newPassword"
+            >,
+          )}
           errors={errors}
           leftElement={<Icon as={FaLock} />}
         />

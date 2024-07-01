@@ -39,6 +39,8 @@ const Wrapper: FC<WrapperProps> = ({ children }) => {
   return (
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>
+        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+        {/* @ts-expect-error */}
         <RouterProvider router={router} />
       </ChakraProvider>
     </QueryClientProvider>
