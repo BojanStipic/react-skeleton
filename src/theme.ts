@@ -3,7 +3,8 @@ import {
   extendTheme,
   withDefaultColorScheme,
 } from "@chakra-ui/react";
-import { StyleFunctionProps, mode } from "@chakra-ui/theme-tools";
+import { mode, StyleFunctionProps } from "@chakra-ui/theme-tools";
+
 import "@fontsource/alfa-slab-one";
 import "@fontsource/fira-sans/100-italic.css";
 import "@fontsource/fira-sans/100.css";

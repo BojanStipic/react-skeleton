@@ -1,7 +1,7 @@
-import { UseQueryResult, useQuery } from "@tanstack/react-query";
+import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { AxiosError } from "axios";
 
-import { ProblemDetail, api } from "../../common";
+import { api, ProblemDetail } from "../../common";
 
 export const useCsrfToken = (): UseQueryResult<
   undefined,

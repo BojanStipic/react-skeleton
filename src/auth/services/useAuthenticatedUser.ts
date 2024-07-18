@@ -1,8 +1,8 @@
-import { UseQueryResult, useQuery } from "@tanstack/react-query";
+import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
 
 import { User } from "..";
-import { ProblemDetail, api } from "../../common";
+import { api, ProblemDetail } from "../../common";
 
 export const useAuthenticatedUser = (): UseQueryResult<
   User | null,

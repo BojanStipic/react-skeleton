@@ -1,4 +1,4 @@
-import { ChakraComponent, chakra } from "@chakra-ui/react";
+import { chakra, ChakraComponent } from "@chakra-ui/react";
 import { FC } from "react";
 
 export type FormProps = ChakraComponent<"form">;

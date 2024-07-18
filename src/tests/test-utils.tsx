@@ -1,13 +1,13 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
-  RouterProvider,
   createMemoryHistory,
   createRootRoute,
   createRoute,
   createRouter,
+  RouterProvider,
 } from "@tanstack/react-router";
-import { RenderOptions, RenderResult, render } from "@testing-library/react";
+import { render, RenderOptions, RenderResult } from "@testing-library/react";
 import { FC, ReactElement, ReactNode } from "react";
 
 import { theme } from "../theme";

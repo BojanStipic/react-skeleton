@@ -1,7 +1,7 @@
 import { useToast } from "@chakra-ui/react";
 import {
-  UseMutationResult,
   useMutation,
+  UseMutationResult,
   useQueryClient,
 } from "@tanstack/react-query";
 import { useNavigate } from "@tanstack/react-router";
@@ -9,7 +9,7 @@ import { AxiosError } from "axios";
 import { useTranslation } from "react-i18next";
 
 import { LoginReq } from "..";
-import { ProblemDetail, api } from "../../common";
+import { api, ProblemDetail } from "../../common";
 
 export const useLoginMut = (): UseMutationResult<
   void,

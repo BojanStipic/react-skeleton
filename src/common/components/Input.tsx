@@ -11,7 +11,7 @@ import {
   InputRightAddon,
   InputRightElement,
 } from "@chakra-ui/react";
-import { ReactNode, forwardRef } from "react";
+import { forwardRef, ReactNode } from "react";
 import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
 
 export type InputProps = Omit<ChakraInputProps, "isInvalid"> &
