@@ -1,5 +1,6 @@
-import eslint from "@eslint/js";
-import * as tanstackQuery from "@tanstack/eslint-plugin-query";
+import { fixupPluginRules } from "@eslint/compat";
+import javascript from "@eslint/js";
+import tanstackQuery from "@tanstack/eslint-plugin-query";
 import prettier from "eslint-config-prettier";
 import jestDom from "eslint-plugin-jest-dom";
 import jsxA11y from "eslint-plugin-jsx-a11y";
@@ -7,40 +8,26 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactJsxRuntime from "eslint-plugin-react/configs/jsx-runtime.js";
 import react from "eslint-plugin-react/configs/recommended.js";
 import testingLibrary from "eslint-plugin-testing-library";
-import tseslint from "typescript-eslint";
+import typescript from "typescript-eslint";
 
 // eslint-disable-next-line no-restricted-syntax
-export default tseslint.config(
+export default typescript.config(
   {
     ignores: ["dist/", "coverage/", "eslint.config.js"],
   },
-  eslint.configs.recommended,
-  ...tseslint.configs.strictTypeChecked,
+
+  javascript.configs.recommended,
+  ...typescript.configs.strictTypeChecked,
   react,
   reactJsxRuntime,
   {
-    plugins: {
-      "react-hooks": reactHooks,
-    },
+    plugins: { "react-hooks": fixupPluginRules(reactHooks) },
     rules: reactHooks.configs.recommended.rules,
   },
-  {
-    plugins: {
-      "jsx-a11y": {
-        rules: jsxA11y.rules,
-      },
-    },
-    rules: jsxA11y.configs.recommended.rules,
-  },
-  {
-    plugins: {
-      "@tanstack/query": {
-        rules: tanstackQuery.rules,
-      },
-    },
-    rules: tanstackQuery.configs.recommended.rules,
-  },
+  jsxA11y.flatConfigs.recommended,
+  ...tanstackQuery.configs["flat/recommended"],
   prettier,
+
   {
     settings: { react: { version: "detect" } },
     languageOptions: {
