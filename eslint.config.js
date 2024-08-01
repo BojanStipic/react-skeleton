@@ -32,7 +32,7 @@ export default typescript.config(
     settings: { react: { version: "detect" } },
     languageOptions: {
       parserOptions: {
-        project: ["tsconfig.json", "tsconfig.node.json"],
+        project: ["tsconfig.json"],
         tsconfigRootDir: import.meta.dirname,
       },
     },
