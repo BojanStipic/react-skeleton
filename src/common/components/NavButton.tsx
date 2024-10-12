@@ -17,7 +17,6 @@ export const NavButton: FC<NavButtonProps> = ({
   const match = useMatchRoute()({ to });
 
   return (
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     <Button as={Link} to={to} colorScheme={match ? "brand" : "gray"} {...rest}>
       <Icon as={icon} mr={2} fontSize="2xl" />
       {children}
