@@ -1,4 +1,3 @@
-import { fixupPluginRules } from "@eslint/compat";
 import javascript from "@eslint/js";
 import tanstackQuery from "@tanstack/eslint-plugin-query";
 import prettier from "eslint-config-prettier";
@@ -21,7 +20,7 @@ export default typescript.config(
   react,
   reactJsxRuntime,
   {
-    plugins: { "react-hooks": fixupPluginRules(reactHooks) },
+    plugins: { "react-hooks": reactHooks },
     rules: reactHooks.configs.recommended.rules,
   },
   jsxA11y.flatConfigs.recommended,
@@ -64,17 +63,10 @@ export default typescript.config(
       "react/self-closing-comp": "error",
     },
   },
+
   {
     files: ["*.test*."],
     ...jestDom.configs["flat/recommended"],
-  },
-  {
-    files: ["*.test*."],
-    plugins: {
-      "testing-library": {
-        rules: testingLibrary.rules,
-      },
-    },
-    rules: testingLibrary.configs.react.rules,
+    ...testingLibrary.configs["flat/react"],
   },
 );
