@@ -12,7 +12,13 @@ import typescript from "typescript-eslint";
 // eslint-disable-next-line no-restricted-syntax
 export default typescript.config(
   {
-    ignores: ["dist/", "coverage/", "eslint.config.js"],
+    ignores: [
+      "dist/",
+      "coverage/",
+      "eslint.config.js",
+      "lint-staged.config.mjs",
+      "prettier.config.mjs",
+    ],
   },
 
   javascript.configs.recommended,

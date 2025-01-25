@@ -1,4 +1,6 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "include": ["."],
   "compilerOptions": {
     "target": "ESNext",
     "useDefineForClassFields": true,
@@ -16,6 +18,5 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "types": ["vite/client"]
-  },
-  "include": ["."]
+  }
 }
