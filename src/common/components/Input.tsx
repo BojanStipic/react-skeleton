@@ -11,7 +11,7 @@ import {
   InputRightAddon,
   InputRightElement,
 } from "@chakra-ui/react";
-import { forwardRef, ReactNode } from "react";
+import { FC, ReactNode } from "react";
 import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
 
 export type InputProps = Omit<ChakraInputProps, "isInvalid"> &
@@ -25,55 +25,49 @@ export type InputProps = Omit<ChakraInputProps, "isInvalid"> &
     rightElement?: ReactNode;
   };
 
-export const Input = forwardRef<HTMLInputElement, InputProps>(
-  (
-    {
-      name,
-      label,
-      hint,
-      errors,
-      isRequired,
-      isDisabled,
-      isReadOnly,
-      leftAddon,
-      rightAddon,
-      leftElement,
-      rightElement,
-      ...rest
-    },
-    ref,
-  ) => {
-    return (
-      <FormControl
-        isInvalid={!!errors[name]}
-        isRequired={isRequired}
-        isDisabled={isDisabled}
-        isReadOnly={isReadOnly}
-      >
-        <FormLabel>{label}</FormLabel>
-        <InputGroup>
-          {leftAddon ? <InputLeftAddon>{leftAddon}</InputLeftAddon> : null}
-          {leftElement ? (
-            <InputLeftElement pointerEvents="none">
-              {leftElement}
-            </InputLeftElement>
-          ) : null}
-          <ChakraInput {...rest} name={name} ref={ref} />
-          {rightElement ? (
-            <InputRightElement pointerEvents="none">
-              {rightElement}
-            </InputRightElement>
-          ) : null}
-          {rightAddon ? <InputRightAddon>{rightAddon}</InputRightAddon> : null}
-        </InputGroup>
-        {errors[name]?.message ? (
-          <FormErrorMessage>{errors[name].message as string}</FormErrorMessage>
-        ) : hint ? (
-          <FormHelperText>{hint}</FormHelperText>
+export const Input: FC<InputProps> = ({
+  name,
+  label,
+  hint,
+  errors,
+  isRequired,
+  isDisabled,
+  isReadOnly,
+  leftAddon,
+  rightAddon,
+  leftElement,
+  rightElement,
+  ref,
+  ...rest
+}) => {
+  return (
+    <FormControl
+      isInvalid={!!errors[name]}
+      isRequired={isRequired}
+      isDisabled={isDisabled}
+      isReadOnly={isReadOnly}
+    >
+      <FormLabel>{label}</FormLabel>
+      <InputGroup>
+        {leftAddon ? <InputLeftAddon>{leftAddon}</InputLeftAddon> : null}
+        {leftElement ? (
+          <InputLeftElement pointerEvents="none">
+            {leftElement}
+          </InputLeftElement>
         ) : null}
-      </FormControl>
-    );
-  },
-);
-
-Input.displayName = "Input";
+        <ChakraInput {...rest} name={name} ref={ref} />
+        {rightElement ? (
+          <InputRightElement pointerEvents="none">
+            {rightElement}
+          </InputRightElement>
+        ) : null}
+        {rightAddon ? <InputRightAddon>{rightAddon}</InputRightAddon> : null}
+      </InputGroup>
+      {errors[name]?.message ? (
+        <FormErrorMessage>{errors[name].message as string}</FormErrorMessage>
+      ) : hint ? (
+        <FormHelperText>{hint}</FormHelperText>
+      ) : null}
+    </FormControl>
+  );
+};
